@@ -19,7 +19,23 @@ function addStyleResource(rule) {
 
 module.exports = {
 	siteName: 'Iratxe Yañez',
-	plugins: [],
+
+	transformers: {
+		remark: {
+			externalLinksTarget: '_blank',
+			externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+			anchorClassName: 'icon icon-link'
+		}
+	},
+
+	plugins: [{
+		use: '@gridsome/source-filesystem',
+		options: {
+			path: 'work/**/*.md',
+			typeName: 'WorkPost',
+			remark: {}
+		}
+	}],
 
 	chainWebpack: config => {
 		// Load variables for all vue-files
