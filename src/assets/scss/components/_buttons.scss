@@ -1,0 +1,385 @@
+/* ===============================
+=             Buttons            =
+=============================== /
+
+/*
+ * Definimos los botones y sus variantes
+ */
+
+/**
+ * .btn es la clase principal para definir un botón
+ */
+
+%buttons {
+	-webkit-appearance: none;
+	display: inline-block;
+	border: $button-border-width solid $button-border-color;
+	border-radius: $button-border-radius;
+	background: $button-background;
+	color: $button-color;
+	font-family: $button-font-family;
+	font-weight: $button-font-weight;
+	font-size: fs(normal);
+	text-transform: $button-text-transform;
+	padding: .75rem 1.25rem;
+	margin: 0 0 .5rem;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	line-height: 1;
+	transition: all $animation-hover ease-in;
+	outline: none;
+
+	& + & {
+		margin-left: .25rem;
+	}
+
+	svg {
+		display: inline-block;
+		max-height: fs(normal);
+		fill: $button-color;
+		margin-right: .25em;
+	}
+}
+
+// Buttons on hover
+%buttons-hover {
+	border: $button-border-width solid darken($button-border-color, 10%);
+	background: $button-background-hover;
+	color: $button-color;
+	text-decoration: none;
+
+	svg {
+		fill: $button-color;
+	}
+}
+
+// Buttons on focus
+%buttons-focus {
+	border: $button-border-width solid darken($button-border-color, 10%);
+	background: darken($button-background, 10%);
+	color: $button-color;
+	text-decoration: none;
+}
+
+// Apply styles to .button class, button element, and button-based inputs
+#{$buttons} {
+	@extend %buttons;
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	&:hover {
+		@extend %buttons-hover;
+	}
+
+	&:focus,
+	&:active {
+		@extend %buttons-focus;
+	}
+
+	&:disabled {
+		background: $color-light-grey;
+		border-color: $color-light-grey;
+		color: $color-white;
+		cursor: not-allowed;
+	}
+}
+
+
+/* ----------
+Button variants
+---------- */
+
+/**
+ * Variantes de los botones: color para dar sensaciones.
+ */
+
+/**
+* Disabled button
+*/
+.btn--disabled,
+a.btn--disabled {
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		background: $color-light-grey;
+		border-color: $color-light-grey;
+		color: $color-white;
+		cursor: not-allowed;
+	}
+}
+
+/**
+* Info button
+*/
+.btn--info,
+a.btn--info {
+	color: $color-white;
+	border: 1px solid $color-info;
+	background: $color-info;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border: 1px solid darken($color-info, 10%);
+		background: darken($color-info, 10%);
+	}
+}
+
+/**
+* Error button
+*/
+.btn--error,
+a.btn--error {
+	color: $color-white;
+	border: 1px solid $color-error;
+	background: $color-error;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border: 1px solid darken($color-error, 10%);
+		background: darken($color-error, 10%);
+	}
+}
+
+/**
+* Success button
+*/
+.btn--success,
+a.btn--success {
+	color: $color-white;
+	border: 1px solid $color-success;
+	background: $color-success;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border: 1px solid darken($color-success, 10%);
+		background: darken($color-success, 10%);
+	}
+}
+
+/**
+* Warning button
+*/
+.btn--warning,
+a.btn--warning {
+	color: darken($color-warning, 40%);
+	border: 1px solid $color-warning;
+	background: $color-warning;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: darken($color-warning, 40%);
+		border: 1px solid darken($color-warning, 10%);
+		background: darken($color-warning, 10%);
+	}
+}
+
+/**
+* Primary button
+*/
+.btn--primary,
+a.btn--primary {
+	background-color: $color-primary;
+	border-color: $color-primary;
+	color: $color-white;
+
+	svg {
+		fill: $color-white;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border-color: darken($color-primary, 10%);
+		background: darken($color-primary, 10%);
+
+		svg {
+			fill: $color-white;
+		}
+	}
+}
+
+/**
+* Secondary button
+*/
+.btn--secondary,
+a.btn--secondary {
+	background-color: $color-secondary;
+	border-color: $color-secondary;
+	color: $color-white;
+
+	svg {
+		fill: $color-white;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border-color: darken($color-secondary, 10%);
+		background: darken($color-secondary, 10%);
+
+		svg {
+			fill: $color-white;
+		}
+	}
+}
+
+
+/**
+* Reverse button
+*/
+.btn--reverse,
+a.btn--reverse {
+	background-color: transparent;
+	border-color: $color-secondary;
+	color: $color-secondary;
+
+	svg {
+		fill: $color-secondary;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border-color: $color-secondary;
+		background: $color-secondary;
+
+		svg {
+			fill: $color-white;
+		}
+	}
+}
+
+
+/**
+* White button
+*/
+.btn--white,
+a.btn--white {
+	background-color: $color-white;
+	border-color: $color-white;
+	color: $color-secondary;
+
+	svg {
+		fill: $color-secondary;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-white;
+		border-color: $color-secondary;
+		background: $color-secondary;
+
+		svg {
+			fill: $color-secondary;
+		}
+	}
+}
+
+
+/**
+* Square button
+*/
+.btn--square,
+a.btn--square {
+	border-radius: 0;
+}
+
+/**
+* Full width button
+*/
+.btn--full,
+a.btn--full {
+	display: block;
+	width: 100%;
+}
+
+
+
+/* ----------
+Button sizes
+---------- */
+
+.btn--x-small,
+a.btn--x-small {
+	padding-right: map-get($size-vars, x-small) * 1rem;
+	padding-left: map-get($size-vars, x-small) * 1rem;
+	padding-top: map-get($size-vars, x-small) * .75rem;
+	padding-bottom: map-get($size-vars, x-small) * .75rem;
+	font-size: fs(x-small);
+	line-height: map-get($size-vars, x-small);
+}
+
+.btn--small,
+a.btn--small {
+	padding-right: map-get($size-vars, small) * 1rem;
+	padding-left: map-get($size-vars, small) * 1rem;
+	padding-top: map-get($size-vars, small) * .75rem;
+	padding-bottom: map-get($size-vars, small) * .75rem;
+	font-size: fs(small);
+	line-height: map-get($size-vars, small);
+}
+
+.btn--large,
+a.btn--large {
+	padding-right: map-get($size-vars, big) * 1rem;
+	padding-left: map-get($size-vars, big) * 1rem;
+	font-size: fs(big);
+	line-height: map-get($size-vars, big);
+}
+
+
+/* ----------
+Button group
+---------- */
+
+/**
+ * Con esta clase podemos agrupar los botones
+ * en grupos horizontales.
+ */
+
+.btn-group {
+	display: flex;
+
+	#{$buttons} {
+		flex: 1 auto;
+		border-radius: 0;
+		margin-left: 0;
+		margin-right: 1px;
+
+		&:first-child {
+			margin-left: 0;
+			border-radius: $button-border-radius 0 0 $button-border-radius;
+		}
+
+		&:last-child {
+			border-radius: 0 $button-border-radius $button-border-radius 0;
+			margin-right: 0;
+		}
+	}
+}
+
+
+/* ----------
+Button Roles
+---------- */
+
+[role=button] {
+	cursor: pointer;
+}

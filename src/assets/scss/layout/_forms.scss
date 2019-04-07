@@ -1,0 +1,490 @@
+/* =============================
+=             Forms            =
+============================= */
+
+%input {
+	display: block;
+	border: 1px solid $border-color;
+	border-radius: $input-border-radius;
+	padding: .75rem;
+	outline: none;
+	background: $input-background;
+	margin-bottom: .5rem;
+	font-size: 1rem;
+	width: 100%;
+	max-width: 100%;
+	line-height: 1;
+	transition: all $animation-hover;
+	appearance: none;
+}
+
+// Input fields on hover
+%input-hover {
+	border: 1px solid darken($border-color, 10%);
+}
+
+// Input fields on focus
+%input-focus {
+	border: 1px solid $input-focus;
+	outline: 0;
+	// box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($link-color, 30%);
+}
+
+// Variable containing all input fields
+#{$inputs-type} {
+	@extend %input;
+
+	&:hover {
+		@extend %input-hover;
+	}
+
+	&:focus,
+	&:active {
+		@extend %input-focus;
+	}
+}
+
+
+/* ----------
+Form elements
+---------- */
+
+form {
+	margin: 0 0 $margin 0;
+}
+
+fieldset {
+	margin: $margin 0;
+	padding: 0;
+	border-width: 0;
+}
+
+legend {
+	display: block;
+	width: 100%;
+	margin-bottom: $margin / 2;
+	padding: 0;
+	color: $text-color;
+	border: 0;
+	border-bottom: $input-border-width $input-border-style $input-border-color;
+	white-space: normal;
+	font-weight: 600;
+}
+
+
+/* ----------
+Textareas
+---------- */
+
+textarea {
+	resize: vertical;
+	height: auto;
+	overflow: auto;
+	vertical-align: top;
+}
+
+
+/* ----------
+Selects
+---------- */
+
+select {
+	color: $text-color;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
+	// background: url(#{$image-path}/icons/arrow_drop_down.svg) right center no-repeat;
+	line-height: 1; // ensures text doesn't get cut off
+}
+
+select::-ms-expand {
+	display: none; // dropdown icon fix for IE
+}
+
+// Make range full width
+[type=range] {
+	width: 100%;
+}
+
+
+/* ----------
+Labels
+---------- */
+
+label {
+	font-weight: 600;
+	max-width: 100%;
+	display: block;
+	margin: 1rem 0 .5rem;
+}
+
+
+/* ----------
+Other inputs
+---------- */
+
+input[type='file'] {
+	width: auto;
+	padding: initial;
+	line-height: initial;
+	border: initial;
+	background-color: transparent;
+	background-color: initial;
+	box-shadow: none;
+}
+
+// Remove Number Spinners from Chrome
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+// Remove Number Spinners from Firefox
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+input[type='hidden'] {
+	display: none;
+}
+
+
+/* ----------
+Disabled
+---------- */
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	opacity: .5;
+	cursor: not-allowed;
+}
+
+
+/* ----------
+Focus & Placeholder
+---------- */
+
+input:focus,
+textarea:focus {
+	border-color: $input-focus;
+	outline: 0;
+	outline: thin dotted \9;
+}
+
+input::placeholder {
+	color: $placeholder-color;
+}
+
+
+/* ----------
+Input icon
+---------- */
+
+/**
+* Iconos dentro del campo input
+*/
+
+.input--icon {
+	position: relative;
+	margin-bottom: $margin / 4;
+
+	input {
+		padding-left: em(40);
+		margin-bottom: 0;
+	}
+
+	.icon {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		padding-left: .5em;
+		padding-right: .5em;
+	}
+
+	svg {
+		width: em(20);
+		height: em(20);
+		fill: rgba($color-primary, .5);
+	}
+}
+
+
+/* ----------
+Input Footer
+---------- */
+
+/**
+* Pie para elementos de formulario (text-required, errors, etc.)
+*/
+
+.help-text {
+	form & {
+		display: block;
+		font-size: fs(small);
+		margin-top: -.5em;
+	}
+
+	[type=checkbox] ~ &,
+	[type=radio] ~ & {
+		padding-left: .75rem;
+		margin-bottom: $margin;
+	}
+}
+
+
+/* ----------
+Radio button & Checkbox
+---------- */
+
+// By default, multiple choice inputs stack vertically
+.multiple-choice {
+	display: block;
+	position: relative;
+	padding: 0 0 0 25px;
+	margin-top: $margin;
+	margin-bottom: $margin;
+
+	// Absolutely position inputs within label, to allow text to wrap
+	input {
+		position: absolute;
+		cursor: pointer;
+		left: 0;
+		top: 0;
+		width: 25px;
+		height: 25px;
+		z-index: 1;
+		margin: 0;
+		opacity: 0;
+		zoom: 1;
+	}
+
+	label {
+		cursor: pointer;
+		padding: .1em $margin .1em .75rem;
+		display: block;
+		margin: 0;
+		font-size: fs(small);
+
+		// remove 300ms pause on mobile
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+
+		@include respond-to(medium) {
+			padding-top: .1em;
+			padding-bottom: .1em;
+		}
+	}
+
+	[type=radio] + label::before {
+		content: '';
+		border: 2px solid $input-border-color;
+		background: transparent;
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+	}
+
+	[type=radio] + label::after {
+		content: '';
+		border: 8px solid;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 7px;
+		left: 7px;
+		border-radius: 50%;
+		opacity: 0;
+	}
+
+	[type=checkbox] + label::before {
+		content: '';
+		border: 2px solid $input-border-color;
+		background: transparent;
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	[type=checkbox] + label::after {
+		content: '';
+		border: solid;
+		border-width: 0 0 5px 5px;
+		background: transparent;
+		border-top-color: transparent;
+		width: 18px;
+		height: 10px;
+		position: absolute;
+		top: 6px;
+		left: 4px;
+		transform: rotate(-45deg);
+		opacity: 0;
+	}
+
+	// Focused state
+	[type=radio]:focus + label::before {
+		box-shadow: 0 0 0 4px $input-focus;
+	}
+
+	[type=checkbox]:focus + label::before {
+		box-shadow: 0 0 0 3px $input-focus;
+	}
+
+	// Selected state
+	input:checked + label::after {
+		opacity: 1;
+	}
+
+	// Disabled state
+	input:disabled {
+		cursor: default;
+	}
+
+	input:disabled + label {
+		opacity: .5;
+		cursor: default;
+	}
+}
+
+// To sit multiple choice inputs next to each other, use .inline on parent
+.inline .multiple-choice {
+	clear: none;
+
+	@include respond-to(medium) {
+		margin-bottom: 0;
+		margin-right: $gutter-width;
+	}
+}
+
+
+/* ----------
+Required
+---------- */
+
+/**
+* Validamos los formularios que son "required":
+* http://coolvillage.es/ayuda-al-usuario-a-rellenar-formularios-con-css/
+*/
+
+input:required:focus:invalid {
+	background-color: lighten($color-primary, 70%);
+	border: 1px solid $color-primary;
+	color: $text-color;
+
+	&::placeholder {
+		color: rgba($text-color, .5);
+	}
+}
+
+input:required:focus:valid {
+	background-color: lighten($color-success, 40%);
+	border: 1px solid $color-success;
+	color: $text-color;
+
+	&::placeholder {
+		color: rgba($text-color, .5);
+	}
+}
+
+label .required {
+	color: $color-error;
+	font-size: .9em;
+}
+
+/**
+* Si hay error añadimos clase al selector padre del input (Ex: .form-group)
+*/
+.has-error {
+	transition: all $animation-transition;
+	margin-bottom: $margin / 2;
+
+	input,
+	textarea,
+	select {
+		/* stylelint-disable-next-line */
+		border: 1px solid $color-error !important;
+		margin-bottom: .5rem;
+	}
+
+	label {
+		/* stylelint-disable-next-line */
+		color: $alert--error-text-color !important;
+	}
+
+	&.checkbox {
+		input[type='checkbox'] + label {
+			a {
+				color: $alert--error-text-color;
+			}
+
+			span {
+				border-color: $color-error;
+			}
+		}
+
+		.error {
+			display: inline-block;
+		}
+	}
+
+	.help-text {
+		color: $color-error;
+	}
+
+	.input--icon input {
+		margin-bottom: 0;
+	}
+}
+
+// Error class for element forms
+input,
+select,
+textarea {
+	&.has-error {
+		border: 1px solid $color-error;
+
+		+ .help-text {
+			color: $color-error;
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		&.has-error {
+			/* stylelint-disable-next-line */
+			@extend .has-error;
+		}
+	}
+}
+
+
+/* ----------
+Grid
+---------- */
+
+.form {
+	.grid {
+		@include respond-to(small) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: $gutter-width;
+		}
+
+		@include respond-to(large) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

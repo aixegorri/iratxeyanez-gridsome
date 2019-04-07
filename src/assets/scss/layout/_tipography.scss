@@ -1,0 +1,240 @@
+/* ==================================
+=            Tipography            =
+================================== */
+
+/* ----------
+Headings
+---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: $margin 0;
+	font-weight: $heading-font-weight;
+	font-family: $heading-font-family;
+	color: $heading-font-color;
+}
+
+// Set headers line-height, margin bottom and font size
+@each
+	$header,
+	$margin-bottom,
+	$font-size,
+	$line-height
+	in
+	(h1, 1.5, 1.75, 1.2)
+	(h2, 1.5, 1.5, 1.2)
+	(h3, 1.5, 1.25, 1.2)
+	(h4, 1.5, 1.1, 1.2)
+	(h5, 1.5, 1, 1.2) {
+	#{$header},
+	.#{$header} {
+		margin-bottom: ($margin-bottom) * 1rem;
+		font-size: ($font-size) * 1rem;
+		line-height: $line-height;
+
+		@include respond-to(small) {
+			font-size: $font-size + .5rem;
+		}
+	}
+
+	h4 {
+		@include respond-to(small) {
+			font-size: 1.5rem;
+		}
+	}
+
+	h5 {
+		@include respond-to(small) {
+			font-size: 1.25rem;
+		}
+	}
+
+	h6 {
+		font-size: 1rem;
+	}
+}
+
+h1:not(:first-child),
+h2:not(:first-child),
+h3:not(:first-child) {
+	@include respond-to(small) {
+		margin-top: 2.5rem;
+	}
+}
+
+
+/* ----------
+Text
+---------- */
+
+p,
+ol,
+ul,
+dl,
+address {
+	margin: 0 0 $margin 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+small {
+	font-size: fs(small);
+	color: $color-grey;
+}
+
+ul,
+ol {
+	margin: 0 0 $margin 0;
+	padding: 0 0 0 $gutter-width;
+
+	&.unstyled {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+
+// Remove extra margin for nested lists
+// li ul,
+// li ol {
+// 	margin: 0;
+// }
+
+
+/* ----------
+Blockquote
+---------- */
+
+blockquote {
+	margin: 0 0 $margin 0;
+	padding-left: $gutter-width;
+	border-left: 10px solid $border-color;
+	font-family: $font-family-alt;
+	font-style: normal;
+
+	p {
+		font-size: fs(big);
+		color: $color-grey;
+		font-style: italic;
+		line-height: 1.5;
+	}
+
+	cite {
+		display: block;
+		margin-top: $margin;
+		font-size: 1rem;
+		text-align: right;
+	}
+}
+
+q {
+	font-style: italic;
+}
+
+blockquote p::before,
+blockquote p::after {
+	content: "";
+}
+
+
+/* ----------
+Text Level
+---------- */
+
+abbr[title] {
+	border-bottom: 1px dotted $border-color;
+	cursor: help;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+mark {
+	background-color: #ffeea8;
+	padding: 0 .2rem;
+}
+
+sub,
+sup {
+	position: relative;
+	font-size: fs(small);
+	line-height: 0;
+	vertical-align: $line-height-base;
+}
+
+sup {
+	top: -.5em;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+hr {
+	clear: both;
+	display: block;
+	margin: $margin 0;
+	padding: 0;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid $border-color;
+}
+
+dt {
+	font-weight: 600;
+}
+
+dd {
+	margin-bottom: .5rem;
+	margin-inline-start: $margin;
+}
+
+
+/* ----------
+Keyboard input
+---------- */
+
+kbd {
+	background-color: #f7f7f7;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 2px #ffffff inset;
+	color: #333333;
+	display: inline-block;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.4;
+	margin: 0 .1em;
+	padding: .1em .6em;
+	text-shadow: 0 1px 0 #ffffff;
+}
+
+
+/* ----------
+Font Specs
+---------- */
+
+/*
+ * Creamos clases para cada uno de los tamaños de fuentes. Se pueden ver en Settings.
+ * Son los nombres de las varables con el prefijo font-
+ * Por ejemplo:
+
+	.font-x-small {
+		font-size: .8rem;
+	}
+
+ */
+
+@each $name, $value in $size-vars {
+	.font-#{$name} {
+		font-size: $value * 1rem;
+	}
+}

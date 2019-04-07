@@ -1,0 +1,222 @@
+/* ================================
+=            Utilities            =
+================================ */
+
+/*
+*
+* Selectors repeated constantly
+*/
+
+/**
+ * Classic clearfix
+ */
+.clearfix::before,
+.clearfix::after {
+	content: " ";
+	display: block;
+}
+
+.clearfix::after {
+	clear: both;
+}
+
+/**
+ * Text aligment
+ */
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+/**
+ * Display
+ */
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+/**
+ * Vertical center
+ */
+.vertical-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/**
+ * Images
+ */
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Containers
+ */
+.container {
+	max-width: map-get($containers, large);
+	padding: 0 1rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// X-Small container
+.container--x-small {
+	/* stylelint-disable-next-line */
+	@extend .container;
+
+	max-width: map-get($containers, x-small);
+}
+
+// Small container
+.container--small {
+	/* stylelint-disable-next-line */
+	@extend .container;
+
+	max-width: map-get($containers, small);
+}
+
+// Medium container
+.container--medium {
+	/* stylelint-disable-next-line */
+	@extend .container;
+
+	max-width: map-get($containers, medium);
+}
+
+/**
+ * Display state
+ */
+.show {
+	/* stylelint-disable-next-line */
+	display: block !important;
+}
+
+.hide {
+	/* stylelint-disable-next-line */
+	display: none !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+/**
+ * Floats
+ */
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/**
+ * Paddings
+ */
+.no-padding-top {
+	padding-top: 0;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0;
+}
+
+.padding-top {
+	padding-top: 2rem;
+}
+
+.padding-bottom {
+	padding-bottom: 2rem;
+}
+
+/**
+ * Margins
+ */
+.no-margin-top {
+	margin-top: 0;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.margin-top {
+	margin-top: 2rem;
+}
+
+.margin-bottom {
+	margin-bottom: 2rem;
+}
+
+
+/* ----------
+Placeholders
+---------- */
+
+%text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/**
+ * Containers & wrappers
+ */
+%max-width {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $page-max-width;
+}
+
+/**
+ * Listas sin estilos
+ */
+%unstyled-list {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+
+/**
+ * Dropdown icon
+ */
+%dropdown-icon {
+	width: 100%;
+	background-image: url(#{$image-path}/icons/arrow_drop_down.svg);
+	background-repeat: no-repeat;
+	background-position: right em(5) center;
+	padding-right: em(35);
+
+	&:hover {
+		background-color: darken($color-light-grey, 5%);
+		text-decoration: none;
+	}
+
+	&.active {
+		background-color: darken($color-light-grey, 5%);
+		background-image: url(#{$image-path}/icons/arrow_drop_up.svg);
+	}
+}

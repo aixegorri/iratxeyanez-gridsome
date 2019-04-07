@@ -1,0 +1,54 @@
+/* =================================
+=             Functions            =
+================================= */
+
+/* ----------
+Unit converter
+---------- */
+
+/*
+ * Convert pixels into responsive units
+ */
+
+// PX to REM
+@function rem($pixels, $context: $font-size-default) {
+	@return ($pixels / $context * 1rem);
+}
+
+// PX to EM
+@function em($pixels, $context: $font-size-default) {
+	@return ($pixels / $context * 1em);
+}
+
+
+/* ----------
+Sass Maps
+---------- */
+
+/*
+ * Function to keep font size consistent
+
+	.selector { font-size: fs(x-small);}
+
+ * You can see the current values and variables in settings.scss
+ */
+
+@function fs($font-size) {
+	@return map-get($size-vars, $font-size) * 1rem;
+}
+
+/*
+ * Function to control Index values
+
+	.selector { z-index: z(modal);}
+
+ * Compiles to:
+
+	.selector { z-index: 9001;}
+
+ * You can see the current values and variables in settings.scss
+ */
+
+@function z($layer) {
+	@return map-get($z-layers, $layer);
+}

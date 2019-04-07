@@ -1,0 +1,97 @@
+/* ================================
+=             Elements            =
+================================ */
+
+/* ----------
+Links
+---------- */
+
+a {
+	text-decoration: none;
+	color: $link-color;
+
+	&:visited {
+		color: $link-visited-color;
+	}
+
+	&:hover {
+		text-decoration: underline;
+		color: $link-hover-color;
+	}
+
+	&:focus {
+		color: $link-focus-color;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+
+/* ----------
+Images
+---------- */
+
+.img--rounded {
+	border-radius: $border-radius-xxl;
+}
+
+.img--polaroid {
+	padding: $gutter-width / 2;
+	background-color: $color-white;
+	border: 1px solid $border-color;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.img--circle {
+	border-radius: 100%;
+}
+
+
+/* ----------
+Figure
+---------- */
+
+figure {
+	margin-bottom: $margin;
+
+	img {
+		margin-bottom: $margin / 4;
+	}
+
+	figcaption {
+		display: block;
+		font-weight: normal;
+		font-size: fs(small);
+		font-style: italic;
+		color: $color-grey;
+	}
+}
+
+
+/* ----------
+SVG
+---------- */
+svg {
+	vertical-align: middle;
+	width: inherit;
+	height: 100%;
+	transition: all $animation-hover ease-in;
+}
+
+// TODO: Create & test loader SVG
+.loader {
+	max-width: rem(30);
+	fill: $color-grey;
+
+	&--center {
+		margin: auto;
+		display: block;
+	}
+
+	&--inverse {
+		fill: $color-white;
+	}
+}

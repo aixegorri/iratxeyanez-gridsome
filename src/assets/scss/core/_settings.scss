@@ -1,0 +1,305 @@
+/* =================================
+=             Settings             =
+================================= */
+
+/**
+ *
+ * Define all variables and values to use
+ *
+ */
+
+
+/* ----------
+Breakpoints
+---------- */
+
+/**
+ * "Start with the small screen first, then expand until it looks like shit. Time to insert a breakpoint!"
+ * Used with mixin `respond-to($breakpoint)`:
+
+	.selector {
+		color: red;
+		@include respond-to(medium) {
+			color: blue;
+		}
+	}
+
+ *
+ */
+
+$breakpoints: (
+	'small': 30em, 		// 480px
+	'medium': 48em, 		// 768px
+	'large': 56.25em, 	// 900px
+	'x-large': 68.75em, 	// 1100px
+) !default;
+
+/* ----------
+Colors
+---------- */
+
+/**
+ * Brand colors
+ */
+$color-primary: #f40059; // Passion Red
+$color-secondary: #001c75; // Night Sky
+$color-terciary: #f2f3f4; // Light White
+$color-gradient: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%); // Gradient Field
+
+/**
+ * Grey Scale
+ */
+$color-black: rgb(0, 0, 0);
+$color-darker-grey: lighten($color-black, 10%);
+$color-dark-grey: lighten($color-black, 20%);
+$color-grey: #636363;
+$color-light-grey: lighten($color-black, 80%);
+$color-lighter-grey: lighten($color-black, 90%);
+$color-white: rgb(255, 255, 255);
+
+/**
+ * Help colors
+ */
+$color-alert: rgb(252, 228, 207);
+$color-error: rgb(218, 79, 73);
+$color-info: rgb(168, 226, 228);
+$color-success: rgb(26, 188, 155);
+$color-warning: rgb(219, 185, 31);
+
+/**
+ * Elements
+ */
+$background-color: $color-white;
+$border-color: $color-light-grey;
+$text-color: $color-darker-grey;
+
+/**
+ * Links
+ */
+$link-color : $color-primary;
+$link-hover-color: $link-color;
+$link-visited-color : $link-color;
+$link-focus-color: $link-color;
+
+
+/* ----------
+Containers
+---------- */
+
+$containers: (
+	'x-small': 37.5em, 	// 600px
+	'small': 50em, 		// 800px
+	'medium': 62.5em, 	// 1000px
+	'large': 75em 			// 1200px
+);
+
+
+/* ----------
+Fonts
+---------- */
+
+/**
+ * Fonts definitions:
+ */
+$font-size-default: 16;
+$font-size-base: ($font-size-default / $font-size-default * 1rem);
+$line-height-base: 1.6;
+$font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-family-alt: Georgia, Times, serif;
+
+/**
+ * Headings:
+ */
+$heading-font-color: $text-color;
+$heading-font-weight: 700;
+$heading-font-family: $font-family-alt;
+
+/*
+ * Font Size variables are defined in a Scss MAP, this MAP will create
+ * a class (in `utilities.scss`) for every size with the value in REM units, you can check
+ * `utilities.scss` if you need to change the loop:
+
+	.x-small { font-size: .8rem }
+
+ * We also have a function to assign font sizes, call `fs`:
+
+	.selector { font-size: fs(x-small); }
+
+ *
+ */
+
+$size-vars: (
+	'x-small': .6,
+	'small': .8,
+	'normal': 1,
+	'big': 1.5,
+	'huge': 2
+);
+
+
+/* ----------
+Layout
+---------- */
+
+/**
+ * Spacing
+ */
+$space-vars: (
+	'xx-small': calc(#{$font-size-base} / 8),	// 2px
+	'x-small': calc(#{$font-size-base} / 4),	// 4px
+	'small': calc(#{$font-size-base} / 2),		// 8px
+	'medium': #{$font-size-base},					// 16px
+	'large': calc(#{$font-size-base} * 2),		// 32px
+	'x-large': calc(#{$font-size-base} * 4),	// 64px
+	'xx-large': calc(#{$font-size-base} * 8)	// 128px
+);
+
+/**
+ * Elements
+ */
+$gutter-width: 1.5rem;
+$page-max-width: 1024px;
+$padding: $gutter-width;
+$margin: 1.5rem;
+
+/**
+ * Border radius
+ */
+$border-radius-xxs: map-get($space-vars, xx-small);	// 2px
+$border-radius-xs: map-get($space-vars, x-small);		// 4px
+$border-radius-s: map-get($space-vars, small);			// 8px
+$border-radius-m: map-get($space-vars, medium);			// 16px
+$border-radius-l: map-get($space-vars, large);			// 32px
+$border-radius-xl: map-get($space-vars, x-large);		// 64px
+$border-radius-xxl: map-get($space-vars, xx-large);	// 128px
+
+/**
+ * Animation
+ */
+$animation-hover: .25s;
+$animation-transition: .5s;
+
+/**
+ * Z-Index
+ */
+
+/**
+ * We can have control over z-index and not ending up having 900 to infinite.
+ * To use this values, we use the `z($layers)` function:
+
+	.selector {
+		z-index: z(modal);
+	}
+
+ *
+ */
+
+$z-layers: (
+	'modal': 10,
+	'over': 5,
+	'default': 1,
+	'below': -5,
+	'bottomless-pit': -10
+);
+
+
+/* ----------
+Assets path
+---------- */
+
+/**
+ * Sometimes we need change image or fonts dir from develop to production
+ */
+$image-path: '../images'; // Use: background-image: url('#{$image-path}/btn.jpg');
+$font-path: 'https://static.onesoccer.ca/shared/fonts';
+
+
+/* ----------
+Textures
+---------- */
+
+/**
+ * Defines components like buttons, alerts and other elements...
+ */
+
+// Alerts
+$alert-border-color: darken($color-alert, 20%);
+$alert-border-width: 1px;
+$alert-border-style: solid;
+$alert-text-color: darken($color-alert, 60%);
+
+// Error
+$alert--error-color: lighten($color-error, 30%);
+$alert--error-border-color: lighten($color-error, 20%);
+$alert--error-text-color: $color-error;
+
+// Info
+$alert--info-color: lighten($color-info, 10%);
+$alert--info-border-color: darken($color-info, 10%);
+$alert--info-text-color: darken($color-info, 50%);
+
+// Success
+$alert--success-color: lighten($color-success, 30%);
+$alert--success-border-color: lighten($color-success, 20%);
+$alert--success-text-color: darken($color-success, 20%);
+
+// Warning
+$alert--warning-color: lighten($color-warning, 30%);
+$alert--warning-border-color: lighten($color-warning, 20%);
+$alert--warning-text-color: darken($color-warning, 20%);
+
+/**
+ * Badges
+ */
+$badge-background: transparent;
+$badge-text-color: $text-color;
+
+/**
+ * Buttons
+ */
+$buttons: ('.btn, a.btn, button, [type=submit], [type=reset], [type=button]');
+$button-background: $color-primary;
+$button-background-hover: darken($button-background, 10%);
+$button-color: $color-white;
+$button-font-family: $font-family-base;
+$button-font-weight: 700;
+$button-border-color: $button-background;
+$button-border-width: 2px;
+$button-border-radius: none;
+$button-text-transform: uppercase;
+
+/**
+ * Boxes (well)
+ */
+$well-background: red;
+$well-border-color: darken($well-background, 20%);
+$well-border-width: 1px;
+$well-border-style: solid;
+$well-shadow: darken($well-background, 10%);
+$well-shadow-blur: 10px;
+
+/**
+ * Tables
+ */
+$table-background: transparent;
+$table-stripe-color: $color-lighter-grey;
+$table-hover: $color-lighter-grey;
+$table-border-color: $color-light-grey;
+$table-border-width: 1px;
+$table-border-style: solid;
+
+/**
+ * Forms
+ */
+$inputs-type: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea');
+$input-background: $color-white;
+$input-border-color: $color-light-grey;
+$input-border-width: 1px;
+$input-border-style: solid;
+$input-border-radius: $border-radius-xxs;
+$input-hover: lighten($color-black, 50%);
+$input-focus: $color-primary;
+$placeholder-color: $color-grey;
+$checkbox-color: $color-primary;
+$checkbox-text-color: $text-color;
+$checkbox-checked: $color-white;
