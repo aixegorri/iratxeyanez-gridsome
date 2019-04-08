@@ -42,7 +42,7 @@ Colors
  * Brand colors
  */
 $color-primary: #00b19e; // Smooth Green
-$color-secondary: #e2e3e4; // Light White
+$color-secondary: #eeeeee; // Light White
 
 /**
  * Grey Scale
@@ -50,7 +50,7 @@ $color-secondary: #e2e3e4; // Light White
 $color-black: rgb(30, 30, 30);
 $color-darker-grey: lighten($color-black, 10%);
 $color-dark-grey: lighten($color-black, 20%);
-$color-grey: #636363;
+$color-grey: #898989;
 $color-light-grey: lighten($color-black, 80%);
 $color-lighter-grey: lighten($color-black, 90%);
 $color-white: rgb(255, 255, 255);
