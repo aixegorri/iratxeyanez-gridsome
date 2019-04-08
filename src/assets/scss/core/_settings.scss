@@ -102,15 +102,15 @@ Fonts
 $font-size-default: 16;
 $font-size-base: ($font-size-default / $font-size-default * 1rem);
 $line-height-base: 1.6;
-$font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-family-base: 'Karla', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 $font-family-alt: Georgia, Times, serif;
 
 /**
  * Headings:
  */
 $heading-font-color: $text-color;
-$heading-font-weight: 700;
-$heading-font-family: $font-family-alt;
+$heading-font-weight: 400;
+$heading-font-family: $font-family-base;
 
 /*
  * Font Size variables are defined in a Scss MAP, this MAP will create

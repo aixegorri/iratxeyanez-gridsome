@@ -7,47 +7,13 @@
  * Add font name here.
  */
 
-@font-face {
-	font-family: 'Circular Std';
-	src: url('#{$font-path}/lineto-circular-book.eot');
-	src: url('#{$font-path}/lineto-circular-book.eot?#iefix') format('embedded-opentype'),
-	url('#{$font-path}/lineto-circular-book.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
 
- @font-face {
-	font-family: 'Circular Std';
-	src: url('#{$font-path}/lineto-circular-bold.eot');
-	src: url('#{$font-path}/lineto-circular-bold.eot?#iefix') format('embedded-opentype'),
-	url('#{$font-path}/lineto-circular-bold.woff') format('woff');
-	font-weight: normal;
-	font-style: bold;
-}
-
-@font-face {
-	font-family: 'Circular Std';
-	src: url('#{$font-path}/lineto-circular-black.eot');
-	src: url('#{$font-path}/lineto-circular-black.eot?#iefix') format('embedded-opentype'),
-	url('#{$font-path}/lineto-circular-black.woff') format('woff');
-	font-weight: normal;
-	font-style: 800;
-}
-
-@font-face {
-	font-family: 'Titling Gothic FB';
-	src: url('#{$font-path}/titling-gothic-fb-normal-bold.eot');
-	src: url('#{$font-path}/titling-gothic-fb-normal-bold.eot?#iefix') format('embedded-opentype'),
-	url('#{$font-path}/titling-gothic-fb-normal-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Titling Gothic FB';
-	src: url('#{$font-path}/titling-gothic-fb-normal-black.eot');
-	src: url('#{$font-path}/titling-gothic-fb-normal-black.eot?#iefix') format('embedded-opentype'),
-	url('#{$font-path}/titling-gothic-fb-normal-black.woff') format('woff');
-	font-weight: 800;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'Circular Std';
+// 	src: url('#{$font-path}/lineto-circular-book.eot');
+// 	src: url('#{$font-path}/lineto-circular-book.eot?#iefix') format('embedded-opentype'),
+// 	url('#{$font-path}/lineto-circular-book.woff') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
