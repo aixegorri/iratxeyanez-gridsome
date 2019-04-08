@@ -59,6 +59,14 @@ body {
 	hr {
 		border-color: darken($color-secondary, 5%);
 	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $color-black;
+		margin-top: $margin;
+		margin-bottom: space(small);
+		font-size: fs(big);
+	}
 }
 
 

@@ -26,6 +26,18 @@ Sass Maps
 ---------- */
 
 /*
+ * Function to keep space consistent
+
+	.selector { property: space(x-small);}
+
+ * You can see the current values and variables in settings.scss
+ */
+
+@function space($size) {
+	@return map-get($space-vars, $size);
+}
+
+/*
  * Function to keep font size consistent
 
 	.selector { font-size: fs(x-small);}
