@@ -53,6 +53,10 @@ export default {
 	height: 100%;
 }
 
+.navbar__brand {
+	font-size: 1.1em;
+}
+
 .nav {
 	position: fixed;
 	top: 5rem;
