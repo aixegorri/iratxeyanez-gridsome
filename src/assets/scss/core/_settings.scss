@@ -41,15 +41,13 @@ Colors
 /**
  * Brand colors
  */
-$color-primary: #f40059; // Passion Red
-$color-secondary: #001c75; // Night Sky
-$color-terciary: #f2f3f4; // Light White
-$color-gradient: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%); // Gradient Field
+$color-primary: #00b19e; // Smooth Green
+$color-secondary: #e2e3e4; // Light White
 
 /**
  * Grey Scale
  */
-$color-black: rgb(0, 0, 0);
+$color-black: rgb(30, 30, 30);
 $color-darker-grey: lighten($color-black, 10%);
 $color-dark-grey: lighten($color-black, 20%);
 $color-grey: #636363;
@@ -71,7 +69,7 @@ $color-warning: rgb(219, 185, 31);
  */
 $background-color: $color-white;
 $border-color: $color-light-grey;
-$text-color: $color-darker-grey;
+$text-color: $color-dark-grey;
 
 /**
  * Links
