@@ -14,5 +14,4 @@ collections:
 	fields: # The fields for each document, usually in front matter
 	- {label: "Title", name: "title", widget: "string"}
 	- {label: "Featured Image", name: "thumbnail", widget: "image"}
-	- {label: "Class Name", name: "class", widget: "string"}
 	- {label: "Body", name: "body", widget: "markdown"}
