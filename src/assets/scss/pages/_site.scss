@@ -111,23 +111,11 @@ body {
 	}
 
 	@include respond-to(medium) {
-		&:nth-child(1) {
-			grid-row-end: span 2;
-		}
-
-		&:nth-child(3) {
-			grid-column-end: span 2;
-		}
-
-		&:nth-child(4) {
-			grid-column-end: span 2;
-		}
-
 		&.span-column {
 			grid-row-end: span 2;
 		}
 
-		&-span-row {
+		&.span-row {
 			grid-column-end: span 2;
 		}
 	}

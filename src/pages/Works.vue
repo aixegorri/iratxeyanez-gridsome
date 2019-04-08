@@ -4,7 +4,7 @@
 			<h1 class="main__title">Works</h1>
 			<!-- Works Grid -->
 			<section class="works">
-				<article class="works__item" v-for="post in $page.posts.edges" :key="post.id">
+				<article class="works__item" v-for="post in $page.posts.edges" :key="post.id" :class="post.node.class">
 					<g-link :to="post.node.path">
 						<figure>
 							<g-image :src="post.node.thumbnail" :alt="post.node.title" />
@@ -28,6 +28,7 @@ query Works {
 				path
 				title
 				thumbnail
+				class
 			}
 		}
 	}

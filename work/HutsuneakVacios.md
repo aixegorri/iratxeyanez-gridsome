@@ -1,6 +1,7 @@
 ---
 title: Hutsuneak / Vacíos
 thumbnail: /uploads/works/hutsuneak-vacios/cover.jpg
+class: span-row
 ---
 
 # Hutsuneak / Vacíos

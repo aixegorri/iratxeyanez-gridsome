@@ -1,6 +1,7 @@
 ---
 title: Restos
 thumbnail: /uploads/works/restos/cover.jpg
+class: span-column
 ---
 
 # Restos

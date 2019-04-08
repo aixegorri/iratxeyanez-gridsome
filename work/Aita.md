@@ -1,6 +1,7 @@
 ---
 title: Aita
 thumbnail: /uploads/works/aita/cover.jpg
+class:
 ---
 
 # Aita
