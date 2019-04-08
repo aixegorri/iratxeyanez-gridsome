@@ -1,5 +1,6 @@
 ---
 title: Hutsuneak / Vacíos
+thumbnail: /uploads/works/hutsuneak-vacios/cover.jpg
 ---
 
 # Hutsuneak / Vacíos

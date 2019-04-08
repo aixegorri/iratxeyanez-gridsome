@@ -4,7 +4,7 @@
 			<article class="works__item" v-for="post in $page.posts.edges" :key="post.id">
 				<g-link :to="post.node.path">
 					<figure>
-						<g-image src="~/assets/img/works/aita/cover.jpg" :alt="post.node.title" />
+						<g-image :src="post.node.thumbnail" :alt="post.node.title" />
 					</figure>
 					<div class="works__hover-state">
 						<h3 class="works__title">{{ post.node.title }}</h3>
@@ -21,8 +21,9 @@ query Works {
 		edges {
 			node {
 				id
-				title
 				path
+				title
+				thumbnail
 			}
 		}
 	}
