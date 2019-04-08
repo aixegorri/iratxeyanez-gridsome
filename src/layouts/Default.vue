@@ -11,6 +11,18 @@
 			</div>
 		</header>
 		<slot/>
+		<footer class="footer">
+			<div class="container">
+				<h3 class="footer__title">Iratxe Yañez.</h3>
+				<p class="footer__description">
+					Basque Artist.
+					<br>
+					<g-link to="/contact">Get in touch.</g-link>
+				</p>
+				<hr>
+				<p class="footer__copy">© Copyright {{ new Date().getFullYear() }}. All Rights Reserved.</p>
+			</div>
+		</footer>
 	</div>
 </template>
 
