@@ -39,8 +39,11 @@ body {
  */
 
 .header {
-	padding-top: $padding;
-	padding-bottom: $padding;
+	height: 5rem;
+
+	.container {
+		height: 100%;
+	}
 }
 
 

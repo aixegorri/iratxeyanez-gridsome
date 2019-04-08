@@ -2,12 +2,7 @@
 	<div class="page">
 		<header class="header">
 			<div class="container">
-				<g-link to="/">{{ $static.metaData.siteName }}</g-link>
-				<nav class="nav">
-					<g-link class="nav__link" to="/">Home</g-link>
-					<g-link class="nav__link" to="/works">Works</g-link>
-					<g-link class="nav__link" to="/about">About</g-link>
-				</nav>
+				<Navbar/>
 			</div>
 		</header>
 		<slot/>
@@ -33,3 +28,15 @@ query {
 	}
 }
 </static-query>
+
+<script>
+import Navbar from '@/components/Navbar'
+
+export default {
+	name: 'Layout',
+
+	components: {
+		Navbar
+	}
+}
+</script>
