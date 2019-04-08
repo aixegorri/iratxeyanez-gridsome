@@ -39,15 +39,22 @@ export default {
 
 <style lang="scss">
 	.works {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-		grid-column-gap: $gutter-width;
-		grid-row-gap: $gutter-width;
+		@include respond-to(small) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-column-gap: $gutter-width;
+			grid-row-gap: $gutter-width;
+		}
 	}
 
 	.works__item {
 		width: 100%;
 		height: em(200);
+		margin-bottom: $margin;
+
+		@include respond-to(small) {
+			margin-bottom: 0;
+		}
 
 		&:hover {
 			.works__hover-state {
