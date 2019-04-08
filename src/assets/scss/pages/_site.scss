@@ -49,6 +49,11 @@ body {
  */
 
 .footer {
+	background-color: $color-secondary;
 	padding-top: $padding;
 	padding-bottom: $padding;
+
+	hr {
+		border-color: darken($color-secondary, 5%);
+	}
 }
