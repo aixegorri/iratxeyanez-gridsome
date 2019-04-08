@@ -5,7 +5,9 @@
 				<Navbar/>
 			</div>
 		</header>
-		<slot/>
+		<main class="main">
+			<slot/>
+		</main>
 		<footer class="footer">
 			<div class="container">
 				<h3 class="footer__title">Iratxe Yañez.</h3>
