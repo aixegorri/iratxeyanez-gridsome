@@ -290,3 +290,116 @@ h6 {
 		}
 	}
 }
+
+
+/**
+ * Contact
+ */
+
+.section-form {
+	@include respond-to(small) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__image {
+		margin-bottom: space(medium);
+		max-height: em(200);
+		overflow: hidden;
+
+		@include respond-to(small) {
+			flex: 0 0 30%;
+			max-width: rem(300);
+			max-height: inherit;
+			margin-right: space(large);
+			margin-bottom: 0;
+		}
+
+		img {
+			object-fit: cover;
+		}
+	}
+}
+
+.form {
+	flex: 1 1 auto;
+	max-width: em(700);
+
+	.fieldset {
+		margin-top: 0;
+
+		@include respond-to(medium) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	label {
+		border-bottom: 1px solid $color-primary;
+		margin-top: 0;
+		padding: space(small) 0;
+		font-weight: 400;
+		color: $color-grey;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px solid $color-secondary;
+		padding: space(small);
+
+		&:hover {
+			border: none;
+			border-bottom: 1px solid $color-primary;
+		}
+
+		&:focus {
+			border: none;
+			border-bottom: 1px solid $color-primary;
+		}
+	}
+
+	textarea {
+		border: none;
+		background-image: linear-gradient(#eee 1px, transparent 1px);
+		background-size: 100% em(40);
+		background-position: center 3em;
+		margin-top: -.5em;
+		padding-left: 0;
+		padding-right: 0;
+		line-height: em(40);
+	}
+
+	&__group {
+		display: flex;
+		margin-bottom: space(small);
+
+		@include respond-to(medium) {
+			flex: 0 0 calc(50% - #{$gutter-width});
+		}
+	}
+
+	&__group--textarea {
+		display: block;
+
+		@include respond-to(medium) {
+			flex: 1 0 auto;
+		}
+
+		label {
+			margin-bottom: 0;
+		}
+	}
+
+	&__submit {
+		text-align: right;
+	}
+
+	.btn {
+		width: 100%;
+
+		@include respond-to(medium) {
+			width: inherit;
+		}
+	}
+}
