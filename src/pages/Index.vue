@@ -1,7 +1,7 @@
 <template>
 	<Layout class="page--works">
 		<div class="container">
-			<h1 class="main__title">Works</h1>
+			<h3 class="main__title">Works</h3>
 			<!-- Works Grid -->
 			<section class="works">
 				<article class="works__item" v-for="post in $page.posts.edges" :key="post.id" :class="post.node.thumbnailAlign">
@@ -10,7 +10,7 @@
 							<g-image :src="post.node.thumbnail" :alt="post.node.title" />
 						</figure>
 						<div class="works__hover-state">
-							<h3 class="works__title">{{ post.node.title }}</h3>
+							<h4 class="works__title">{{ post.node.title }}</h4>
 						</div>
 					</g-link>
 				</article>
