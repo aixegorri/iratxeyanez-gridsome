@@ -180,3 +180,48 @@ body {
 	transition-delay: $animation-hover / 2;
 	color: $color-white;
 }
+
+
+/**
+ * About
+ */
+
+.bio {
+	@include  respond-to(small) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__image {
+		margin-bottom: space(medium);
+		max-height: em(250);
+		overflow: hidden;
+
+		@include respond-to(small) {
+			max-width: rem(360);
+			max-height: inherit;
+			flex: 0 0 calc(40% - #{$gutter-width});
+			margin-right: $gutter-width;
+			margin-bottom: 0;
+		}
+
+		img {
+			object-fit: cover;
+
+			@include respond-to(medium) {
+				height: 100%;
+			}
+		}
+	}
+
+	&__article {
+		background-color: $color-secondary;
+		padding: space(large);
+	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $color-black;
+		margin-top: 0;
+	}
+}
