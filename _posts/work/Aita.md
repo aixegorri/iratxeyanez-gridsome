@@ -1,7 +1,7 @@
 ---
 title: Aita
 thumbnail: /uploads/works/aita/cover.jpg
-class:
+thumbnailAlign: default
 ---
 
 AITA 2.0 es una obra plástica de carácter escultórico contenedora de memoria. Una memoria particular que guarda el recuerdo de un pasado agrícola. Es ésta representante de los nuevos caminos que ha dado la sociedad, es una memoria particular que ha acontecido el cambio, que ha vivido la revolución industrial.
