@@ -34,6 +34,17 @@ body {
 */
 
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color-black;
+	text-transform: uppercase;
+}
+
+
 /**
  * Header
  */
@@ -187,6 +198,8 @@ body {
  */
 
 .bio {
+	margin-bottom: space(x-large);
+
 	@include  respond-to(small) {
 		display: flex;
 		justify-content: space-between;
@@ -223,5 +236,57 @@ body {
 		text-transform: uppercase;
 		color: $color-black;
 		margin-top: 0;
+	}
+}
+
+.cv {
+	&__grid {
+		display: grid;
+		grid-gap: $gutter-width;
+
+		@include respond-to(small) {
+			grid-template-columns: repeat(auto-fit, minmax(em(250), 1fr));
+		}
+
+		@include respond-to(large) {
+			align-items: start;
+		}
+	}
+
+	.panel {
+		background-color: #f7f7f7;
+
+		&__title {
+			margin: 0;
+			padding: space(medium);
+			border-bottom: 1px solid $color-white;
+		}
+
+		&__list {
+			@extend %unstyled-list;
+
+			padding: space(medium);
+			margin-bottom: 0;
+		}
+	}
+
+	.item {
+		&:not(:last-child) {
+			margin-bottom: space(medium);
+		}
+
+		&__date {
+			color: $color-primary;
+			margin-bottom: space(xx-small);
+		}
+
+		&__title {
+			margin: 0;
+			margin-bottom: space(xx-small);
+		}
+
+		&__subtitle {
+			line-height: 1.2;
+		}
 	}
 }
