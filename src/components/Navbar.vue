@@ -65,17 +65,16 @@ export default {
 	width: 100%;
 	overflow: hidden;
 	z-index: 10;
-	padding-top: .5rem;
 	text-align: center;
 	transition: all .3s ease-in;
 	opacity: 0;
-	border-top: 1px solid transparent;
 
 	&.active {
 		height: calc(100vh - 5rem);
+		padding-top: .5rem;
 		opacity: 1;
 		background-color: $color-white;
-		border-color: $color-secondary;
+		border-top: 1px solid $color-secondary;
 	}
 
 	&__item {

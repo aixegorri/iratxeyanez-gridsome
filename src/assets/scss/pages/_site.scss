@@ -319,12 +319,14 @@ h6 {
 			object-fit: cover;
 		}
 	}
+
+	&__form-container {
+		flex: 1 1 auto;
+		max-width: em(700);
+	}
 }
 
 .form {
-	flex: 1 1 auto;
-	max-width: em(700);
-
 	.fieldset {
 		margin-top: 0;
 
@@ -348,14 +350,15 @@ h6 {
 		border-bottom: 1px solid $color-secondary;
 		padding: space(small);
 
-		&:hover {
+		&:hover,
+		&:focus,
+		&:required:focus {
 			border: none;
 			border-bottom: 1px solid $color-primary;
 		}
-
-		&:focus {
-			border: none;
-			border-bottom: 1px solid $color-primary;
+		&:required:focus {
+			background-color: transparent;
+			color: $color-black;
 		}
 	}
 
