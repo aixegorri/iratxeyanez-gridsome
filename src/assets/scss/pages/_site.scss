@@ -46,6 +46,13 @@ h6 {
 	text-transform: uppercase;
 }
 
+.VueCarousel-dot-container {
+	margin-top: space(medium) !important;
+}
+
+.VueCarousel-dot {
+	margin-top: 0 !important;
+}
 
 /**
  * Header
@@ -192,6 +199,20 @@ h6 {
 	transition: $animation-hover;
 	transition-delay: $animation-hover / 2;
 	color: $color-white;
+}
+
+.work-carousel {
+	margin-top: space(large);
+
+	figure {
+		margin-bottom: 0;
+	}
+
+	&__image {
+		object-fit: cover;
+		height: calc(100vh - 5em);
+		max-height: em(450);
+	}
 }
 
 
