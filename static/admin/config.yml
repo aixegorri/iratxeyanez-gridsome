@@ -15,4 +15,5 @@ collections:
   - {label: "Title", name: "title", widget: "string"}
   - {label: "Thumbnail Image", name: "thumbnail", widget: "image"}
   - {label: "Thumbnail Align", name: "thumbnailAlign", widget: "select", options: ["default", "span-row", "span-column"]}
+  # - {label: "Work Images", name: "workImages", widget: "image", options: ["allow_multiple"]}
   - {label: "Body", name: "body", widget: "markdown"}
