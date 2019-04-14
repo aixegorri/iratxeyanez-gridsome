@@ -39,8 +39,6 @@ query WorkPost ($path: String!) {
 </page-query>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel'
-
 export default {
 	metaInfo() {
 		return {
@@ -49,14 +47,14 @@ export default {
 	},
 
 	components: {
-	Carousel: () =>
-		import ('vue-carousel')
-		.then(m => m.Carousel)
-		.catch(),
-	Slide: () =>
-		import ('vue-carousel')
-		.then(m => m.Slide)
-		.catch()
+		Carousel: () =>
+			import ('vue-carousel')
+			.then(m => m.Carousel)
+			.catch(),
+		Slide: () =>
+			import ('vue-carousel')
+			.then(m => m.Slide)
+			.catch()
 	}
 }
 </script>
