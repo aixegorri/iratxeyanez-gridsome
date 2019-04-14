@@ -2,6 +2,9 @@
 title: Aita
 thumbnail: /uploads/works/aita/cover.jpg
 thumbnailAlign: default
+workImages: 
+  - {src: /uploads/works/escenas/escenas_01.jpg, caption: An elephant at sunset}
+  - {src: /uploads/works/escenas/escenas_02.jpg, caption: A rooster at morning}
 ---
 
 AITA 2.0 es una obra plástica de carácter escultórico contenedora de memoria. Una memoria particular que guarda el recuerdo de un pasado agrícola. Es ésta representante de los nuevos caminos que ha dado la sociedad, es una memoria particular que ha acontecido el cambio, que ha vivido la revolución industrial.

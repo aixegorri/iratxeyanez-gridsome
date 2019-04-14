@@ -7,16 +7,10 @@
 			<carousel
 				class="work-carousel"
 				:perPage="1">
-				<slide>
+				<slide v-for="image in $page.post.workImages" :key="image.id">
 					<figure>
-						<g-image class="img-responsive work-carousel__image" src="/uploads/works/escenas/escenas_01.jpg" alt="" />
-						<figcaption class="work-carousel__caption">An elephant at sunset</figcaption>
-					</figure>
-				</slide>
-				<slide>
-					<figure>
-						<g-image class="img-responsive work-carousel__image" src="/uploads/works/escenas/escenas_02.jpg" alt="" />
-						<figcaption class="work-carousel__caption">An elephant at sunset</figcaption>
+						<g-image class="img-responsive work-carousel__image" :src="image.src" :alt="image.src" />
+						<figcaption class="work-carousel__caption">{{ image.caption }}</figcaption>
 					</figure>
 				</slide>
 			</carousel>
@@ -29,6 +23,10 @@ query WorkPost ($path: String!) {
 	post: workPost (path: $path) {
 		title
 		content
+		workImages {
+			src
+			caption
+		}
 	}
 }
 </page-query>
