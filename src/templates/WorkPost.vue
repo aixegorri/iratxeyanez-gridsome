@@ -6,6 +6,11 @@
 			<!-- Image carousel -->
 			<carousel
 				class="work-carousel"
+				:autoplay="true"
+				:autoplayTimeout="8000"
+				:autoplayHoverPause="true"
+				:easing="'ease-in'"
+				:loop="true"
 				:perPage="1">
 				<slide v-for="image in $page.post.workImages" :key="image.id">
 					<figure>
